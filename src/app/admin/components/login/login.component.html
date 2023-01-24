@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="left-side">
+        <!-- <img src="assets/images/login_recipe.jpg"> -->
+        <div class="left-side-panel">
+        </div>
+    </div>
+    <div class="right-side">
+        <div class="form-container">
+            <mat-card>
+                <mat-card-content>
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div class="form-field-container">
+                            <label>Username:</label>
+                            <mat-form-field>
+                                <input matInput placeholder="Enter your username" formControlName="username">
+                            </mat-form-field>
+                            <div *ngIf="f['username'].errors?.['required'] && submitted" class="error-message">
+                                Username is required.
+                            </div>
+                        </div>
+                        <div class="form-field-container">
+                            <label>Password:</label>
+                            <mat-form-field>
+                                <input matInput placeholder="Enter your password" formControlName="password" type="password">
+                            </mat-form-field>
+                        </div>
+                        <button mat-raised-button color="primary" class="full-width-button" [disabled]="loginForm.invalid">Login</button>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
