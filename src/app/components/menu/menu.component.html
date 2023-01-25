@@ -1,0 +1,17 @@
+<!-- <mat-toolbar color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/home">Home</button>
+        <button mat-menu-item>FAQ's</button>
+        <button mat-menu-item>Login</button>
+    </mat-menu>
+</mat-toolbar> -->
+
+
+<nav mat-tab-nav-bar>
+    <a mat-tab-link routerLink='/home' routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">Home</a>
+    <a mat-tab-link routerLink='/faqs' routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">FAQ's</a>
+    <a mat-tab-link routerLink='/admin/login' routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">Login</a>
+</nav>

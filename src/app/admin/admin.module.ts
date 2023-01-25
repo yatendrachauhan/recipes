@@ -13,10 +13,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { LoginComponent } from './components/login/login.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, AdminDashboardComponent],
+  declarations: [
+    LoginComponent,
+    AdminDashboardComponent,
+    RegisterComponent
+  ],
   imports: [
     CommonModule,
     AdminRoutingModule,
