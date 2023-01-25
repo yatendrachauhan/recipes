@@ -1,0 +1,19 @@
+nav.mat-tab-nav-bar {
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mat-tab-link {
+    color: white;
+    font-weight: bold;
+}
+
+.mat-tab-link.mat-tab-label-active {
+    color: white;
+    font-weight: bold;
+}
+
+a[mat-tab-link][routerLink='/login'] {
+    margin-left: auto;
+}

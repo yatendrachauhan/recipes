@@ -11,9 +11,24 @@ import { LoginComponent } from './admin/components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './components/menu/menu.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
+import { HomeComponent } from './components/home/home.component';
+import { FaqsComponent } from './components/faqs/faqs.component';
+import { RegisterComponent } from './admin/components/register/register.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    MenuComponent,
+    HomeComponent,
+    FaqsComponent,
+    RegisterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,6 +39,10 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
