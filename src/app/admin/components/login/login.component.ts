@@ -37,6 +37,8 @@ export class LoginComponent {
     const username = this.loginForm.value.username;
     const password = this.loginForm.value.password;
 
+    this.authService.login(username);
+
     this.router.navigateByUrl('admin/dashboard');
 
     // Make the API call to authenticate the user

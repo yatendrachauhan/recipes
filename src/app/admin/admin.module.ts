@@ -14,13 +14,17 @@ import { MatSortModule } from '@angular/material/sort';
 import { LoginComponent } from './components/login/login.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { RegisterComponent } from './components/register/register.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
+import { AddEditRecipeComponent } from './components/add-edit-recipe/add-edit-recipe.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     AdminDashboardComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddEditRecipeComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +36,9 @@ import { RegisterComponent } from './components/register/register.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
+    MatChipsModule
   ]
 })
 export class AdminModule { }

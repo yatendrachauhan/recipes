@@ -11,7 +11,7 @@ export const RecipeConst = [
       'Simmer for 15-20 minutes.',
       'Drain the spaghetti and add it to the pan with the sauce.',
       'Toss to combine and sprinkle with chopped parsley.'],
-      imageUrl: 'https://www.example.com/spaghetti-bolognese.jpg',
+      imageUrl: 'https://spoonacular.com/recipeImages/579247-556x370.jpg',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
@@ -25,12 +25,12 @@ export const RecipeConst = [
       'Add cheese on top of bread.',
       'Add another slice of bread on top of cheese, butter-side-up.',
       'Cook until bread is toasted and cheese is melted.'],
-      imageUrl: 'https://www.example.com/grilled-cheese-sandwich.jpg',
+      imageUrl: 'https://images.spoonacular.com/file/wximages/423186-636x393.png',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
     {
-      id: 1,
+      id: 3,
       name: 'Spaghetti Bolognese',
       description: 'A classic Italian dish made with minced beef, tomatoes, and spaghetti.',
       ingredients: ['Spaghetti', 'Minced beef', 'Tomatoes', 'Onion', 'Garlic', 'Olive oil', 'Salt', 'Pepper', 'Parsley'],
@@ -41,12 +41,12 @@ export const RecipeConst = [
       'Simmer for 15-20 minutes.',
       'Drain the spaghetti and add it to the pan with the sauce.',
       'Toss to combine and sprinkle with chopped parsley.'],
-      imageUrl: 'https://www.example.com/spaghetti-bolognese.jpg',
+      imageUrl: 'https://images.spoonacular.com/file/wximages/423186-636x393.png',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
     {
-      id: 2,
+      id: 4,
       name: 'Grilled Cheese Sandwich',
       description: 'A classic American sandwich made with bread and cheese.',
       ingredients: ['Bread', 'Cheese', 'Butter'],
@@ -55,12 +55,12 @@ export const RecipeConst = [
       'Add cheese on top of bread.',
       'Add another slice of bread on top of cheese, butter-side-up.',
       'Cook until bread is toasted and cheese is melted.'],
-      imageUrl: 'https://www.example.com/grilled-cheese-sandwich.jpg',
+      imageUrl: 'https://images.spoonacular.com/file/wximages/423186-636x393.png',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
     {
-      id: 1,
+      id: 5,
       name: 'Spaghetti Bolognese',
       description: 'A classic Italian dish made with minced beef, tomatoes, and spaghetti.',
       ingredients: ['Spaghetti', 'Minced beef', 'Tomatoes', 'Onion', 'Garlic', 'Olive oil', 'Salt', 'Pepper', 'Parsley'],
@@ -71,12 +71,12 @@ export const RecipeConst = [
       'Simmer for 15-20 minutes.',
       'Drain the spaghetti and add it to the pan with the sauce.',
       'Toss to combine and sprinkle with chopped parsley.'],
-      imageUrl: 'https://www.example.com/spaghetti-bolognese.jpg',
+      imageUrl: 'https://spoonacular.com/recipeImages/579247-556x370.jpg',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
     {
-      id: 2,
+      id: 6,
       name: 'Grilled Cheese Sandwich',
       description: 'A classic American sandwich made with bread and cheese.',
       ingredients: ['Bread', 'Cheese', 'Butter'],
@@ -85,12 +85,12 @@ export const RecipeConst = [
       'Add cheese on top of bread.',
       'Add another slice of bread on top of cheese, butter-side-up.',
       'Cook until bread is toasted and cheese is melted.'],
-      imageUrl: 'https://www.example.com/grilled-cheese-sandwich.jpg',
+      imageUrl: 'https://images.spoonacular.com/file/wximages/423186-636x393.png',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
     {
-      id: 1,
+      id: 7,
       name: 'Spaghetti Bolognese',
       description: 'A classic Italian dish made with minced beef, tomatoes, and spaghetti.',
       ingredients: ['Spaghetti', 'Minced beef', 'Tomatoes', 'Onion', 'Garlic', 'Olive oil', 'Salt', 'Pepper', 'Parsley'],
@@ -101,12 +101,12 @@ export const RecipeConst = [
       'Simmer for 15-20 minutes.',
       'Drain the spaghetti and add it to the pan with the sauce.',
       'Toss to combine and sprinkle with chopped parsley.'],
-      imageUrl: 'https://www.example.com/spaghetti-bolognese.jpg',
+      imageUrl: 'https://spoonacular.com/recipeImages/579247-556x370.jpg',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
     {
-      id: 2,
+      id: 8,
       name: 'Grilled Cheese Sandwich',
       description: 'A classic American sandwich made with bread and cheese.',
       ingredients: ['Bread', 'Cheese', 'Butter'],
@@ -115,12 +115,12 @@ export const RecipeConst = [
       'Add cheese on top of bread.',
       'Add another slice of bread on top of cheese, butter-side-up.',
       'Cook until bread is toasted and cheese is melted.'],
-      imageUrl: 'https://www.example.com/grilled-cheese-sandwich.jpg',
+      imageUrl: 'https://images.spoonacular.com/file/wximages/423186-636x393.png',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
     {
-      id: 1,
+      id: 9,
       name: 'Spaghetti Bolognese',
       description: 'A classic Italian dish made with minced beef, tomatoes, and spaghetti.',
       ingredients: ['Spaghetti', 'Minced beef', 'Tomatoes', 'Onion', 'Garlic', 'Olive oil', 'Salt', 'Pepper', 'Parsley'],
@@ -131,12 +131,12 @@ export const RecipeConst = [
       'Simmer for 15-20 minutes.',
       'Drain the spaghetti and add it to the pan with the sauce.',
       'Toss to combine and sprinkle with chopped parsley.'],
-      imageUrl: 'https://www.example.com/spaghetti-bolognese.jpg',
+      imageUrl: 'https://spoonacular.com/recipeImages/579247-556x370.jpg',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
     {
-      id: 2,
+      id: 10,
       name: 'Grilled Cheese Sandwich',
       description: 'A classic American sandwich made with bread and cheese.',
       ingredients: ['Bread', 'Cheese', 'Butter'],
@@ -145,12 +145,12 @@ export const RecipeConst = [
       'Add cheese on top of bread.',
       'Add another slice of bread on top of cheese, butter-side-up.',
       'Cook until bread is toasted and cheese is melted.'],
-      imageUrl: 'https://www.example.com/grilled-cheese-sandwich.jpg',
+      imageUrl: 'https://spoonacular.com/recipeImages/579247-556x370.jpg',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
     {
-      id: 1,
+      id: 11,
       name: 'Spaghetti Bolognese',
       description: 'A classic Italian dish made with minced beef, tomatoes, and spaghetti.',
       ingredients: ['Spaghetti', 'Minced beef', 'Tomatoes', 'Onion', 'Garlic', 'Olive oil', 'Salt', 'Pepper', 'Parsley'],
@@ -161,12 +161,12 @@ export const RecipeConst = [
       'Simmer for 15-20 minutes.',
       'Drain the spaghetti and add it to the pan with the sauce.',
       'Toss to combine and sprinkle with chopped parsley.'],
-      imageUrl: 'https://www.example.com/spaghetti-bolognese.jpg',
+      imageUrl: 'https://spoonacular.com/recipeImages/579247-556x370.jpg',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
     {
-      id: 2,
+      id: 12,
       name: 'Grilled Cheese Sandwich',
       description: 'A classic American sandwich made with bread and cheese.',
       ingredients: ['Bread', 'Cheese', 'Butter'],
@@ -175,12 +175,12 @@ export const RecipeConst = [
       'Add cheese on top of bread.',
       'Add another slice of bread on top of cheese, butter-side-up.',
       'Cook until bread is toasted and cheese is melted.'],
-      imageUrl: 'https://www.example.com/grilled-cheese-sandwich.jpg',
+      imageUrl: 'https://images.spoonacular.com/file/wximages/423186-636x393.png',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
     {
-      id: 1,
+      id: 13,
       name: 'Spaghetti Bolognese',
       description: 'A classic Italian dish made with minced beef, tomatoes, and spaghetti.',
       ingredients: ['Spaghetti', 'Minced beef', 'Tomatoes', 'Onion', 'Garlic', 'Olive oil', 'Salt', 'Pepper', 'Parsley'],
@@ -191,12 +191,12 @@ export const RecipeConst = [
       'Simmer for 15-20 minutes.',
       'Drain the spaghetti and add it to the pan with the sauce.',
       'Toss to combine and sprinkle with chopped parsley.'],
-      imageUrl: 'https://www.example.com/spaghetti-bolognese.jpg',
+      imageUrl: 'https://spoonacular.com/recipeImages/579247-556x370.jpg',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
     {
-      id: 2,
+      id: 14,
       name: 'Grilled Cheese Sandwich',
       description: 'A classic American sandwich made with bread and cheese.',
       ingredients: ['Bread', 'Cheese', 'Butter'],
@@ -205,12 +205,12 @@ export const RecipeConst = [
       'Add cheese on top of bread.',
       'Add another slice of bread on top of cheese, butter-side-up.',
       'Cook until bread is toasted and cheese is melted.'],
-      imageUrl: 'https://www.example.com/grilled-cheese-sandwich.jpg',
+      imageUrl: 'https://images.spoonacular.com/file/wximages/423186-636x393.png',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
     {
-      id: 1,
+      id: 15,
       name: 'Spaghetti Bolognese',
       description: 'A classic Italian dish made with minced beef, tomatoes, and spaghetti.',
       ingredients: ['Spaghetti', 'Minced beef', 'Tomatoes', 'Onion', 'Garlic', 'Olive oil', 'Salt', 'Pepper', 'Parsley'],
@@ -221,12 +221,12 @@ export const RecipeConst = [
       'Simmer for 15-20 minutes.',
       'Drain the spaghetti and add it to the pan with the sauce.',
       'Toss to combine and sprinkle with chopped parsley.'],
-      imageUrl: 'https://www.example.com/spaghetti-bolognese.jpg',
+      imageUrl: 'https://spoonacular.com/recipeImages/579247-556x370.jpg',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     },
     {
-      id: 2,
+      id: 16,
       name: 'Grilled Cheese Sandwich',
       description: 'A classic American sandwich made with bread and cheese.',
       ingredients: ['Bread', 'Cheese', 'Butter'],
@@ -235,7 +235,7 @@ export const RecipeConst = [
       'Add cheese on top of bread.',
       'Add another slice of bread on top of cheese, butter-side-up.',
       'Cook until bread is toasted and cheese is melted.'],
-      imageUrl: 'https://www.example.com/grilled-cheese-sandwich.jpg',
+      imageUrl: 'https://images.spoonacular.com/file/wximages/423186-636x393.png',
       createdAt: new Date('2020-01-01'),
       updatedAt: new Date('2020-01-01')
     }

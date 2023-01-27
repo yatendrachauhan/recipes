@@ -1,0 +1,31 @@
+table {
+    width: 100%;
+    /* default styles */
+}
+
+button {
+    float: right;
+    right: 0;
+    margin: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    table {
+
+        /* styles for screens smaller than 600px */
+        tr {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        td,
+        th {
+            flex: 1 0 100%;
+        }
+    }
+}

@@ -13,5 +13,9 @@
 <nav mat-tab-nav-bar>
     <a mat-tab-link routerLink='/home' routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">Home</a>
     <a mat-tab-link routerLink='/faqs' routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">FAQ's</a>
-    <a mat-tab-link routerLink='/admin/login' routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">Login</a>
+    <a mat-tab-link routerLink='/admin/login' routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" *ngIf="!authService.isLoggedIn">Login</a>
+    <a mat-tab-link *ngIf="authService.isLoggedIn" (click)="logout()">Logout</a>
+    <div class="username" *ngIf="authService.isLoggedIn">
+        Welcome {{ authService.username }}
+      </div>
 </nav>

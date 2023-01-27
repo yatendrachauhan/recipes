@@ -17,3 +17,10 @@ nav.mat-tab-nav-bar {
 a[mat-tab-link][routerLink='/login'] {
     margin-left: auto;
 }
+
+.username {
+    font-style: italic;
+    color: white;
+    display: flex;
+    align-items: center;
+}
