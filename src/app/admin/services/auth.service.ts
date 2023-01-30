@@ -38,7 +38,10 @@ export class AuthService {
   }
 
   authenticate(username: string, password: string): Observable<User> {
-    return this.http.post<User>(this.apiUrl + '/login', { username, password });
+    return this.http.post<User>(this.apiUrl + '/admin/login', {
+      username,
+      password,
+    });
   }
 
   register(user: User): Observable<User> {

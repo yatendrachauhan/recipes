@@ -1,1 +1,50 @@
-<p>home works!</p>
+<form class="search-form">
+    <!-- <mat-form-field class="search-input">
+        <mat-label>Search for a recipe</mat-label>
+        <input matInput [(ngModel)]="searchText" name="searchText">
+        <mat-icon class="search-icon" matSuffix>search</mat-icon>
+    </mat-form-field>
+    <button mat-raised-button class="search-button" (click)="search()">Search</button> -->
+    <mat-form-field class="search-input" appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}" placeholder="Search">
+        <mat-icon matSuffix>search</mat-icon>
+        <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchText; else searchIcon" (click)="searchText = ''">
+            <mat-icon>close</mat-icon>
+        </button>
+        <ng-template #searchIcon>
+            <mat-icon matSuffix>search</mat-icon>
+        </ng-template> -->
+    </mat-form-field>
+    <button mat-raised-button class="search-button" (click)="search()">Search</button>
+</form>
+<mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let recipe of recipes">
+        <!-- <mat-card>
+            <img mat-card-image [src]="recipe.imageUrl">
+            <mat-card-title>{{ recipe.name }}</mat-card-title>
+            <mat-card-content>{{ recipe.description }}</mat-card-content>
+            <mat-card-actions>
+                <button mat-button>VIEW</button>
+            </mat-card-actions>
+        </mat-card> -->
+        <mat-card class="example-card">
+            <mat-card-header>
+                <!-- <img mat-card-image [src]="recipe.imageUrl"> -->
+                <!-- <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+            </mat-card-header>
+            <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+            <mat-card-content>
+                {{recipe.description}}
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>VIEW</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+<mat-spinner *ngIf="loading"></mat-spinner>
+<div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+</div>
