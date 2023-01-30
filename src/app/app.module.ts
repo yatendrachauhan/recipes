@@ -17,6 +17,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 import { HomeComponent } from './components/home/home.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
@@ -37,6 +38,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MatProgressSpinnerModule,
     MatGridListModule,
     MatFormFieldModule,
+    MatDialogModule,
     MatInputModule,
     InfiniteScrollModule,
     FormsModule,
@@ -44,4 +46,4 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

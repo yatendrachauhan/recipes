@@ -1,5 +1,6 @@
 mat-card {
     margin: 10px;
+    width: 500px;
 }
 
 .example-card {
@@ -7,8 +8,8 @@ mat-card {
 }
 
 img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 50px;
+    // max-height: 100%;
     object-fit: cover;
 }
 
@@ -41,4 +42,16 @@ mat-spinner {
     mat-grid-list {
         columns: 3;
     }
+}
+
+.recipe-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recipe-details-container img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
 }
