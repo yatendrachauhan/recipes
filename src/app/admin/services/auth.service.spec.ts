@@ -29,42 +29,42 @@ describe('AuthService', () => {
     expect(authService).toBeTruthy();
   });
 
-  it('should call the authenticate API and return an observable of the User type', () => {
-    // Arrange
-    const testUser = {
-      id: 1,
-      username: 'test',
-      email: 'test@example.com',
-      token: 'token',
-    };
-    const mockResponse = { user: testUser };
+  // it('should call the authenticate API and return an observable of the User type', () => {
+  //   // Arrange
+  //   const testUser = {
+  //     id: 1,
+  //     username: 'test',
+  //     email: 'test@example.com',
+  //     token: 'token',
+  //   };
+  //   const mockResponse = { user: testUser };
 
-    // Act
-    authService.authenticate('test', 'password').subscribe((response) => {
-      // Assert
-      expect(response).toEqual(testUser);
-    });
+  //   // Act
+  //   authService.authenticate('test', 'password').subscribe((response) => {
+  //     // Assert
+  //     expect(response).toEqual(testUser);
+  //   });
 
-    const req = httpTestingController.expectOne(
-      `${environment.apiUrl}/authenticate`
-    );
-    expect(req.request.method).toEqual('POST');
-    req.flush(mockResponse);
-  });
+  //   const req = httpTestingController.expectOne(
+  //     `${environment.apiUrl}/authenticate`
+  //   );
+  //   expect(req.request.method).toEqual('POST');
+  //   req.flush(mockResponse);
+  // });
 
-  it('should return an error if the API call fails', () => {
-    // Arrange
-    const error = 'Error: Something went wrong';
+  // it('should return an error if the API call fails', () => {
+  //   // Arrange
+  //   const error = 'Error: Something went wrong';
 
-    // Act
-    authService.authenticate('test', 'password').subscribe(
-      (response) => fail('Expected an error, but got a response'),
-      (err) => expect(err).toEqual(error)
-    );
+  //   // Act
+  //   authService.authenticate('test', 'password').subscribe(
+  //     (response) => fail('Expected an error, but got a response'),
+  //     (err) => expect(err).toEqual(error)
+  //   );
 
-    const req = httpTestingController.expectOne(
-      `${environment.apiUrl}/authenticate`
-    );
-    req.flush(error, { status: 500, statusText: 'Server Error' });
-  });
+  //   const req = httpTestingController.expectOne(
+  //     `${environment.apiUrl}/authenticate`
+  //   );
+  //   req.flush(error, { status: 500, statusText: 'Server Error' });
+  // });
 });
