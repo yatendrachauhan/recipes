@@ -1,22 +1,50 @@
 <div class="form-container">
     <form [formGroup]="recipeForm" (ngSubmit)="submitForm()">
-        <mat-form-field class="form-field">
-            <input matInput placeholder="Name" formControlName="name" required>
-        </mat-form-field>
-        <mat-form-field class="form-field">
-            <textarea matInput placeholder="Description" formControlName="description"></textarea>
-        </mat-form-field>
-        <mat-form-field class="form-field">
-            <input matInput placeholder="Image URL" formControlName="imageUrl">
-        </mat-form-field>
-        <mat-form-field class="form-field">
-            <mat-label>Ingredients</mat-label>
-            <textarea matInput placeholder="Instructions" formControlName="ingredients"></textarea>
-        </mat-form-field>
-        <mat-form-field class="form-field">
-            <mat-label>Instructions</mat-label>
-            <textarea matInput placeholder="Instructions" formControlName="instructions"></textarea>
-        </mat-form-field>
+        <mat-grid-list cols="2" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field class="form-field">
+                    <input matInput placeholder="Name" formControlName="title">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field class="form-field">
+                    <input matInput placeholder="Description" formControlName="description">
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+        <mat-grid-list cols="2" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field class="form-field">
+                    <mat-label>Ingredients</mat-label>
+                    <textarea matInput placeholder="Ingredients" formControlName="ingredients"></textarea>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field class="form-field">
+                    <mat-label>Instructions</mat-label>
+                    <textarea matInput placeholder="Instructions" formControlName="instructions"></textarea>
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+        <mat-grid-list cols="2" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field class="form-field">
+                    <input matInput placeholder="Serving Size (In cups)" type="number" formControlName="servingSize">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field class="form-field">
+                    <input matInput placeholder="Cooking Time (In mins)" type="number" formControlName="cookingTime">
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+
+        <input type="file" (change)="onFileChange($event)" accept="image/*" />
+        <img [src]="base64ImageValue" *ngIf="base64ImageValue" width="100" height="100">
+
         <div class="action-btn">
             <button mat-raised-button class="form-field" color="primary" type="submit">Save</button>
             <button mat-raised-button class="form-field" color="primary" routerLink="/admin/dashboard">Go To

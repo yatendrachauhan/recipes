@@ -9,3 +9,7 @@ export interface User {
   email: string;
   token: string;
 }
+
+export interface LoginAPIResponse {
+  message: string;
+}

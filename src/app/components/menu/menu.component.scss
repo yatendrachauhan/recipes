@@ -18,8 +18,17 @@ a[mat-tab-link][routerLink='/login'] {
     margin-left: auto;
 }
 
+a[mat-icon-button]{
+    color: white;
+}
+
+::ng-deep {
+    .mat-tab-links {
+        float: right;
+    }
+}
+
 .username {
-    font-style: italic;
     color: white;
     display: flex;
     align-items: center;

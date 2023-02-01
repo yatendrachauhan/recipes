@@ -16,7 +16,11 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { RegisterComponent } from './components/register/register.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AddEditRecipeComponent } from './components/add-edit-recipe/add-edit-recipe.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 
 @NgModule({
@@ -24,7 +28,8 @@ import { AddEditRecipeComponent } from './components/add-edit-recipe/add-edit-re
     LoginComponent,
     AdminDashboardComponent,
     RegisterComponent,
-    AddEditRecipeComponent
+    AddEditRecipeComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +43,10 @@ import { AddEditRecipeComponent } from './components/add-edit-recipe/add-edit-re
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatChipsModule
+    MatChipsModule,
+    MatSnackBarModule,
+    MatGridListModule,
+    MatDialogModule
   ]
 })
 export class AdminModule { }

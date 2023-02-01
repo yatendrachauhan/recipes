@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
-import { User } from '../interfaces/login-form.interface';
+import { User, LoginAPIResponse } from '../interfaces/login-form.interface';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -12,6 +12,7 @@ export class AuthService {
   private _isLoggedIn = false;
   private _username = '';
   private _logoutSubject = new Subject<void>();
+  private _authCode = '';
 
   constructor(private http: HttpClient) {}
 
@@ -27,21 +28,24 @@ export class AuthService {
     return this._logoutSubject.asObservable();
   }
 
-  login(username: string) {
+  get authCode() {
+    return this._authCode;
+  }
+
+  login(username: string, password: string) {
     this._isLoggedIn = true;
     this._username = username;
+    this._authCode = btoa(`${username}:${password}`);
   }
 
   logout() {
     this._isLoggedIn = false;
     this._username = '';
+    this._authCode = '';
   }
 
-  authenticate(username: string, password: string): Observable<User> {
-    return this.http.post<User>(this.apiUrl + '/admin/login', {
-      username,
-      password,
-    });
+  authenticate(username: string, password: string): Observable<LoginAPIResponse> {
+    return this.http.post<LoginAPIResponse>(this.apiUrl + 'admin/login', { username, password });
   }
 
   register(user: User): Observable<User> {
