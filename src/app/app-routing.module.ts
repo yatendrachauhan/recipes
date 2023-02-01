@@ -8,7 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   {
     path: 'admin',
-    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) 
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
   },
   { path: 'home', component: HomeComponent },
   { path: 'faqs', component: FaqsComponent },
@@ -20,4 +21,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
