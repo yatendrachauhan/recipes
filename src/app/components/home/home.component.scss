@@ -38,7 +38,22 @@ mat-spinner {
 
 .search-input {
     width: 70%;
-    margin: 0px 10px;
+    margin: 0;
+}
+
+
+.search-button {
+    height: 60px;
+    margin-bottom: 22px;
+    font-size: 19px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background: #e4b9cc;
+    border-bottom: 1px solid;
+
+    &:hover {
+        border-bottom: 2px solid;
+    }
 }
 
 @media (min-width: 600px) {

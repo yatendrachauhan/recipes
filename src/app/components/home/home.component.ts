@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
   recipeDetailsRef: MatDialogRef<any>;
   recipes: Recipe[] = [];
   loading = false;
-  moreData = true;
   searchText: string = '';
   isError: boolean = false;
   errorMessage: string = '';
@@ -38,7 +37,6 @@ export class HomeComponent implements OnInit {
     this.recipeService.getRecipes().subscribe((data) => {
       this.recipes = this.recipes.concat(data);
       this.loading = false;
-      this.moreData = data.length === 10;
     }, error => {
       this.loading = false;
       this.isError = true;
