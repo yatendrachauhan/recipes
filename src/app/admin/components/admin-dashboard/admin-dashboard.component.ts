@@ -1,6 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subject, takeUntil } from 'rxjs';
@@ -24,7 +25,8 @@ export class AdminDashboardComponent implements OnInit, OnDestroy {
     private paginatorIntl: MatPaginatorIntl,
     private changeDetectorRef: ChangeDetectorRef,
     private recipeService: RecipeService,
-    private dialog: MatDialog) {
+    private dialog: MatDialog,
+    private snackBar: MatSnackBar) {
     this.paginator = new MatPaginator(this.paginatorIntl, this.changeDetectorRef);
     this.dataSource = new MatTableDataSource<Recipe>([]);
   }
@@ -54,9 +56,23 @@ export class AdminDashboardComponent implements OnInit, OnDestroy {
     this.recipeService.deleteRecipe(recipeId).pipe(takeUntil(this.destroy$)).subscribe({
       next: (response) => {
         this.fetchRecipes();
+        this.snackBar.open(response.message, 'Close', {
+          duration: 5000,
+          panelClass: ['error']
+        });
       },
       error: (err) => {
-        this.fetchRecipes();
+        if(err?.error?.message) {
+          this.snackBar.open(err.error.message, 'Close', {
+            duration: 5000,
+            panelClass: ['error']
+          });
+        } else {
+          this.snackBar.open(err.message, 'Close', {
+            duration: 5000,
+            panelClass: ['error']
+          });
+        }
       }
     });
   }

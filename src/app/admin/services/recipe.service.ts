@@ -34,9 +34,9 @@ export class RecipeService {
         return this.http.put<Recipe>(url, recipe, { headers });
     }
 
-    deleteRecipe(recipeId: string): Observable<Recipe> {
+    deleteRecipe(recipeId: string): Observable<{message: string}> {
         const headers = new HttpHeaders({ 'Authorization': `Basic ${this.authService.authCode}` });
         const url = `${this.recipesUrl}/${recipeId}`;
-        return this.http.delete<Recipe>(url, { headers });
+        return this.http.delete<{message: string}>(url, { headers });
     }
 }

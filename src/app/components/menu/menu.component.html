@@ -11,11 +11,11 @@
 
 
 <nav mat-tab-nav-bar>
-    <a mat-tab-link routerLink='/home' routerLinkActive = "isActive" #rla="routerLinkActive" [active]="rla.isActive">Home</a>
-    <a mat-tab-link routerLink='/faqs' routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">FAQ's</a>
-    <a mat-tab-link routerLink='/admin/login' routerLinkActive #rla="routerLinkActive" [active]="rla.isActive"
+    <a mat-tab-link routerLink='/home' routerLinkActive="active">Home</a>
+    <a mat-tab-link routerLink='/faqs' routerLinkActive="active">FAQ's</a>
+    <a mat-tab-link routerLink='/admin/login' routerLinkActive="active"
         *ngIf="!authService.isLoggedIn">Login</a>
-    <a mat-tab-link routerLink='/admin/dashboard' routerLinkActive #rla="routerLinkActive" [active]="rla.isActive"
+    <a mat-tab-link routerLink='/admin/dashboard' routerLinkActive="active"
         *ngIf="authService.isLoggedIn">Admin Dashboard</a>
     <div class="username" *ngIf="authService.isLoggedIn">
         Welcome {{ authService.username }}
