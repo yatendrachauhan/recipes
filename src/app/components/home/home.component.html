@@ -1,35 +1,35 @@
 <form class="search-form">
-    <!-- <mat-form-field class="search-input">
-        <mat-label>Search for a recipe</mat-label>
-        <input matInput [(ngModel)]="searchText" name="searchText">
-        <mat-icon class="search-icon" matSuffix>search</mat-icon>
-    </mat-form-field>
-    <button mat-raised-button class="search-button" (click)="search()">Search</button> -->
     <mat-form-field class="search-input" appearance="fill">
-        <mat-label>Search</mat-label>
+        <!-- <mat-label>Search</mat-label> -->
         <input matInput [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}" placeholder="Search">
-        <mat-icon matSuffix>search</mat-icon>
-        <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchText; else searchIcon" (click)="searchText = ''">
+        <!-- <mat-icon matSuffix>search</mat-icon> -->
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchText; else searchIcon" (click)="clearSearch()">
             <mat-icon>close</mat-icon>
         </button>
         <ng-template #searchIcon>
             <mat-icon matSuffix>search</mat-icon>
-        </ng-template> -->
+        </ng-template>
     </mat-form-field>
     <button mat-raised-button class="search-button" (click)="search()">Search</button>
 </form>
+<div *ngIf="recipes.length === 0 && isError" class="error-info">
+    {{ errorMessage }}
+</div>
+
 <mat-grid-list cols="3" rowHeight="2:1">
     <mat-grid-tile *ngFor="let recipe of recipes">
-        <mat-card (click)="openRecipeDetails(recipe)">
-            <mat-card-header>
-                <img mat-card-image [src]="recipe.imageUrl">
-            </mat-card-header>
-            <mat-card-title>{{ recipe.name }}</mat-card-title>
+        <mat-card>
+            <mat-card-title>{{ recipe.title }}</mat-card-title>
             <mat-card-content>
-                {{ recipe.description }}
+                <img *ngIf="recipe.encodedImage; else noImage" [src]="recipe.encodedImage" width="100" height="100">
+                <ng-template #noImage>
+                    <img [src]="recipe.encodedImage" [alt]="'No Image Found'">
+                </ng-template>
+                {{recipe.description.length > 200 ? recipe.description.substring(0, 200) + '...' : recipe.description}}
             </mat-card-content>
-            <mat-card-actions>
-                <button mat-button (click)="openRecipeDetails(recipe)">View</button>
+            <mat-card-actions style="position: absolute; top: 130px;">
+                <!-- <button mat-button (click)="openRecipeDetails(recipe)">View</button> -->
+                <button mat-button color="primary" (click)="openRecipeDetails(recipe)">View</button>
             </mat-card-actions>
         </mat-card>
     </mat-grid-tile>
@@ -39,15 +39,15 @@
 </div>
 
 
-<ng-template #recipeDetails let-data="data">
+<!-- <ng-template #recipeDetails let-data="data">
     <div class="recipe-details-container">
-        <!-- <img [src]="data.recipe.imageUrl"> -->
-        <h2>{{ data.recipe.title }}</h2>
-        <p>{{ data.recipe.description }}</p>
-        <p><strong>Ingredients: </strong> {{ data.recipe.ingredients }}</p>
-        <p><strong>Instructions: </strong> {{ data.recipe.instructions }}</p>
-        <p><strong>Created At: </strong> {{ data.recipe.createdAt }}</p>
-        <p><strong>Updated At: </strong> {{ data.recipe.updatedAt }}</p>
+        <img [src]="data.recipe.imageUrl">
+        <h2>{{ data?.recipe?.title }}</h2>
+        <p>{{ data?.recipe?.description }}</p>
+        <p><strong>Ingredients: </strong> {{ data?.recipe?.ingredients }}</p>
+        <p><strong>Instructions: </strong> {{ data?.recipe?.instructions }}</p>
+        <p><strong>Created At: </strong> {{ data?.recipe?.createdAt }}</p>
+        <p><strong>Updated At: </strong> {{ data?.recipe?.updatedAt }}</p>
         <button mat-button (click)="closeRecipeDetails()">Close</button>
     </div>
-</ng-template>
+</ng-template> -->

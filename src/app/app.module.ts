@@ -21,9 +21,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { HomeComponent } from './components/home/home.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, HomeComponent, FaqsComponent],
+  declarations: [AppComponent, MenuComponent, HomeComponent, FaqsComponent, RecipeDetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

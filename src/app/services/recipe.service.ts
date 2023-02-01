@@ -9,13 +9,13 @@ import { environment } from '../../environments/environment';
 })
 export class RecipeService {
   apiUrl = environment.apiUrl;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getRecipes(recipeName = ''): Observable<any> {
     // return this.http.get('https://your-api.com/recipes', {
     //   params: { recipeName },
     // });
-    return this.http.get(this.apiUrl + '/recipes/' + recipeName);
+    return this.http.get(this.apiUrl + 'recipes/' + recipeName);
     // return of(RecipeConst);
   }
 }

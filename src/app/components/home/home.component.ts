@@ -1,8 +1,8 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../../services/recipe.service';
-import { Recipes } from '../../interfaces/recipe.interface';
+import { Recipe } from '../../interfaces/recipe.interface';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { RecipeDetailsComponent } from '../recipe-details/recipe-details.component';
 
 @Component({
   selector: 'app-recipe-list',
@@ -10,16 +10,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  @ViewChild('recipeDetails', { static: false }) recipeDetails: TemplateRef<any>;
   recipeDetailsRef: MatDialogRef<any>;
-  recipes: Recipes[] = [];
+  recipes: Recipe[] = [];
   loading = false;
   moreData = true;
   searchText: string = '';
+  isError: boolean = false;
+  errorMessage: string = '';
 
   constructor(
     private recipeService: RecipeService,
-    private router: Router,
     private dialog: MatDialog
   ) { }
 
@@ -39,35 +39,36 @@ export class HomeComponent implements OnInit {
       this.recipes = this.recipes.concat(data);
       this.loading = false;
       this.moreData = data.length === 10;
+    }, error => {
+      this.loading = false;
+      this.isError = true;
+      this.errorMessage = 'Something went wrong, Please try again.'
     });
   }
 
   search() {
-    // console.log(this.searchText);
-    // this.recipes = this.recipes.filter(
-    //   (recipe) =>
-    //     recipe?.title?.toLowerCase().includes(this.searchText.toLowerCase()) ||
-    //     recipe?.description
-    //       ?.toLowerCase()
-    //       .includes(this.searchText.toLowerCase())
-    // );
-    // console.log(this.recipes);
-
+    this.isError = false;
     this.loading = true;
     this.recipeService.getRecipes(this.searchText).subscribe((data) => {
       this.recipes = data;
       this.loading = false;
+    }, error => {
+      this.loading = false;
+      this.isError = true;
+      this.recipes = [];
+      this.errorMessage = 'No recipe found. Please try to search with another recipe name.';
     });
+  }
+
+  clearSearch() {
+    this.searchText = '';
+    this.search();
   }
 
   openRecipeDetails(recipe: any) {
-    console.log(recipe)
-    this.recipeDetailsRef = this.dialog.open(this.recipeDetails, {
-      data: { recipe },
+    const dialogRef = this.dialog.open(RecipeDetailsComponent, {
+      width: '80%',
+      data: recipe
     });
-  }
-
-  closeRecipeDetails() {
-    this.recipeDetailsRef.close();
   }
 }

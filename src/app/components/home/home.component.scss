@@ -1,6 +1,8 @@
 mat-card {
     margin: 10px;
     width: 500px;
+    height: 150px;
+    overflow: hidden;
 }
 
 .example-card {
@@ -11,6 +13,7 @@ img {
     max-width: 50px;
     // max-height: 100%;
     object-fit: cover;
+    float: right;
 }
 
 mat-card-image {
@@ -54,4 +57,19 @@ mat-spinner {
     width: 200px;
     height: 200px;
     margin-bottom: 20px;
+}
+
+
+.error-info {
+    margin-top: 20px;
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+button[color="primary"] {
+    background-color: #3f51b5;
+    color: white;
 }

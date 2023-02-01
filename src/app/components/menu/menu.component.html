@@ -11,7 +11,7 @@
 
 
 <nav mat-tab-nav-bar>
-    <a mat-tab-link routerLink='/home' routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">Home</a>
+    <a mat-tab-link routerLink='/home' routerLinkActive = "isActive" #rla="routerLinkActive" [active]="rla.isActive">Home</a>
     <a mat-tab-link routerLink='/faqs' routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">FAQ's</a>
     <a mat-tab-link routerLink='/admin/login' routerLinkActive #rla="routerLinkActive" [active]="rla.isActive"
         *ngIf="!authService.isLoggedIn">Login</a>

@@ -1,1 +1,5 @@
-<p>faqs works!</p>
+<h2>Frequently Asked Questions</h2>
+<ng-container *ngFor="let question of questions">
+    <h3>{{question.title}}</h3>
+    <p>{{question.answer}}</p>
+</ng-container>

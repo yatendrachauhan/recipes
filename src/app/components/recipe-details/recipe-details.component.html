@@ -1,0 +1,14 @@
+<div class="recipe-details-container">
+    <button mat-icon-button class="close-icon" (click)="closeRecipeDetails()">
+        <mat-icon>close</mat-icon>
+    </button>
+    <img *ngIf="data?.encodedImage; else noImage" [src]="data?.encodedImage" width="100" height="100">
+    <ng-template #noImage>
+        <p>Not Available</p>
+    </ng-template>
+    <h2>{{ data?.title }}</h2>
+    <p>{{ data?.description }}</p>
+    <p><strong>Ingredients: </strong> {{ data?.ingredients }}</p>
+    <p><strong>Instructions: </strong> {{ data?.instructions }}</p>
+    <!-- <button mat-button (click)="closeRecipeDetails()">Close</button> -->
+</div>
