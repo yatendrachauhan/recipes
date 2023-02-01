@@ -13,9 +13,9 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.scss']
 })
-export class AdminDashboardComponent implements OnInit, AfterViewInit, OnDestroy {
+export class AdminDashboardComponent implements OnInit, OnDestroy {
 
-  displayedColumns: string[] = ['id', 'name', 'description', 'ingredients', 'instructions', 'imageUrl', 'actions'];
+  displayedColumns: string[] = ['name', 'description', 'ingredients', 'instructions', 'imageUrl', 'actions'];
   dataSource: MatTableDataSource<Recipe>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   private destroy$ = new Subject<void>();
@@ -27,7 +27,6 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit, OnDestroy
     private dialog: MatDialog) {
     this.paginator = new MatPaginator(this.paginatorIntl, this.changeDetectorRef);
     this.dataSource = new MatTableDataSource<Recipe>([]);
-    this.dataSource.paginator = this.paginator;
   }
 
   ngOnInit() {
@@ -39,15 +38,12 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit, OnDestroy
     this.destroy$.complete();
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
-
   fetchRecipes() {
     this.recipeService.getRecipes().pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (response) => {
           this.dataSource = new MatTableDataSource<Recipe>(response);
+          this.dataSource.paginator = this.paginator;
         },
         error: (err) => {
         }
