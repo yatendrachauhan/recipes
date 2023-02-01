@@ -13,7 +13,6 @@ export class RecipeDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.data.title);
-    // this.recipe = this.dialogRef.componentInstance.data;
   }
 
   closeRecipeDetails() {

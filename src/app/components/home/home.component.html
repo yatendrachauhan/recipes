@@ -1,8 +1,7 @@
 <form class="search-form">
     <mat-form-field class="search-input" appearance="fill">
-        <!-- <mat-label>Search</mat-label> -->
+        <mat-label>Search</mat-label>
         <input matInput [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}" placeholder="Search">
-        <!-- <mat-icon matSuffix>search</mat-icon> -->
         <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchText; else searchIcon" (click)="clearSearch()">
             <mat-icon>close</mat-icon>
         </button>
@@ -28,7 +27,6 @@
                 {{recipe.description.length > 200 ? recipe.description.substring(0, 200) + '...' : recipe.description}}
             </mat-card-content>
             <mat-card-actions style="position: absolute; top: 130px;">
-                <!-- <button mat-button (click)="openRecipeDetails(recipe)">View</button> -->
                 <button mat-button color="primary" (click)="openRecipeDetails(recipe)">View</button>
             </mat-card-actions>
         </mat-card>
@@ -37,17 +35,3 @@
 <mat-spinner *ngIf="loading"></mat-spinner>
 <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
 </div>
-
-
-<!-- <ng-template #recipeDetails let-data="data">
-    <div class="recipe-details-container">
-        <img [src]="data.recipe.imageUrl">
-        <h2>{{ data?.recipe?.title }}</h2>
-        <p>{{ data?.recipe?.description }}</p>
-        <p><strong>Ingredients: </strong> {{ data?.recipe?.ingredients }}</p>
-        <p><strong>Instructions: </strong> {{ data?.recipe?.instructions }}</p>
-        <p><strong>Created At: </strong> {{ data?.recipe?.createdAt }}</p>
-        <p><strong>Updated At: </strong> {{ data?.recipe?.updatedAt }}</p>
-        <button mat-button (click)="closeRecipeDetails()">Close</button>
-    </div>
-</ng-template> -->
