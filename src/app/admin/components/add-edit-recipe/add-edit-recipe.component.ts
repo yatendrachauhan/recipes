@@ -84,7 +84,7 @@ export class AddEditRecipeComponent implements OnInit {
     if (this) {
       this.snackBar.open(`Recipe ${this.isEdit ? 'updated' : 'added'} successfully`, 'Close', {
         duration: 5000,
-        panelClass: ['error']
+        panelClass: ['success']
       });
       this.router.navigateByUrl('/admin/dashboard');
     }

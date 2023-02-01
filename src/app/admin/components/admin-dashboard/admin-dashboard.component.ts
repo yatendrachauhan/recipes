@@ -58,7 +58,7 @@ export class AdminDashboardComponent implements OnInit, OnDestroy {
         this.fetchRecipes();
         this.snackBar.open(response.message, 'Close', {
           duration: 5000,
-          panelClass: ['error']
+          panelClass: ['success']
         });
       },
       error: (err) => {

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User, LoginAPIResponse } from '../../interfaces/login-form.interface';
+import { LoginAPIResponse } from '../../interfaces/login-form.interface';
 import { AuthService } from '../../services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -48,7 +48,7 @@ export class LoginComponent {
         next: (response: LoginAPIResponse) => {
           this.snackBar.open(response.message, 'Close', {
             duration: 5000,
-            panelClass: ['error']
+            panelClass: ['success']
           });
           this.authService.login(username, password);
   
