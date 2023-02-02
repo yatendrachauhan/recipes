@@ -12,10 +12,6 @@ export class RecipeService {
   constructor(private http: HttpClient) { }
 
   getRecipes(recipeName = ''): Observable<any> {
-    // return this.http.get('https://your-api.com/recipes', {
-    //   params: { recipeName },
-    // });
     return this.http.get(this.apiUrl + 'recipes/' + recipeName);
-    // return of(RecipeConst);
   }
 }
