@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   searchText: string = '';
   isError: boolean = false;
   errorMessage: string = '';
+  offset: number = 1;
+  totalPages: number;
 
   constructor(
     private recipeService: RecipeService,
@@ -23,20 +25,22 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.loadMore();
+    this.loadRecipes();
   }
 
   onScroll() {
-    if (!this.loading) {
-      // this.loadMore();
+    if (!this.loading && this.offset <= this.totalPages) {
+      this.loadRecipes();
     }
   }
 
-  loadMore() {
+  loadRecipes() {
     this.loading = true;
-    this.recipeService.getRecipes().subscribe((data) => {
-      this.recipes = this.recipes.concat(data);
+    this.recipeService.getRecipesWithPages(this.offset).subscribe((data) => {
+      this.recipes = this.recipes.concat(data.recipes);
       this.loading = false;
+      this.totalPages = data.totalPages;
+      this.offset = this.offset + 1;
     }, error => {
       this.loading = false;
       this.isError = true;
@@ -60,7 +64,9 @@ export class HomeComponent implements OnInit {
 
   clearSearch() {
     this.searchText = '';
-    this.search();
+    this.recipes = [];
+    this.offset = 1;
+    this.loadRecipes();
   }
 
   openRecipeDetails(recipe: any) {

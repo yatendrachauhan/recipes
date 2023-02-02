@@ -8,3 +8,11 @@ export class Recipe {
   servingSize: string = '';
   encodedImage: string = '';
 }
+
+
+export class RecipeResponse {
+  pageSize: number;
+  recipes: Recipe[];
+  totalPages: number;
+  totalRecipes: number;
+}
