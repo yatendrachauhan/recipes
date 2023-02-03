@@ -39,13 +39,13 @@ export class AddEditRecipeComponent implements OnInit {
 
   initForm() {
     this.recipeForm = this.fb.group({
-      title: [this.recipe ? this.recipe.title : '', Validators.required],
-      description: [this.recipe ? this.recipe.description : '', Validators.required],
-      ingredients: [this.recipe ? this.recipe.ingredients : '', Validators.required],
-      instructions: [this.recipe ? this.recipe.instructions : '', Validators.required],
-      encodedImage: [this.recipe ? this.recipe.encodedImage : ''],
-      cookingTime: [this.recipe ? (this.recipe.cookingTime.match(/\d+/g) ? this.recipe.cookingTime.match(/\d+/g)![0] : '') : '', Validators.required],
-      servingSize: [this.recipe ? (this.recipe.servingSize.match(/\d+/g) ? this.recipe.servingSize.match(/\d+/g)![0] : '') : '', Validators.required]
+      title: [(this.recipe && this.recipe.title) ? this.recipe.title : '', Validators.required],
+      description: [(this.recipe && this.recipe.description) ? this.recipe.description : '', Validators.required],
+      ingredients: [(this.recipe && this.recipe.ingredients) ? this.recipe.ingredients : '', Validators.required],
+      instructions: [(this.recipe && this.recipe.instructions) ? this.recipe.instructions : '', Validators.required],
+      encodedImage: [(this.recipe && this.recipe.encodedImage) ? this.recipe.encodedImage : ''],
+      cookingTime: [(this.recipe && this.recipe.cookingTime) ? (this.recipe.cookingTime.match(/\d+/g) ? this.recipe.cookingTime.match(/\d+/g)![0] : '') : '', Validators.required],
+      servingSize: [(this.recipe && this.recipe.servingSize) ? (this.recipe.servingSize.match(/\d+/g) ? this.recipe.servingSize.match(/\d+/g)![0] : '') : '', Validators.required]
     });
   }
 
