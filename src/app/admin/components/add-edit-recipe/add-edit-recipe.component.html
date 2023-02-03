@@ -1,4 +1,5 @@
 <div class="form-container">
+    <h2>{{ isEdit ? 'EDIT RECIPE'  : 'ADD RECIPE' }}</h2>
     <form [formGroup]="recipeForm" (ngSubmit)="submitForm()">
         <mat-grid-list cols="2" rowHeight="80px">
             <mat-grid-tile>

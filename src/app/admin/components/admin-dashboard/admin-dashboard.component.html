@@ -1,5 +1,4 @@
 <button mat-raised-button color="primary" routerLink="/admin/add-recipe">Add Recipe</button>
-<!-- <button mat-raised-button color="primary" (click)="addRecipe()">Add Recipe</button> -->
 <table mat-table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)" class="mat-elevation-z8">
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Recipe Name</th>
@@ -39,9 +38,10 @@
       </div>
     </td>
   </ng-container>
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns">
+  </tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-
+<mat-spinner *ngIf="loading"></mat-spinner>
 <mat-paginator [length]="dataSource.data.length" [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
 </mat-paginator>

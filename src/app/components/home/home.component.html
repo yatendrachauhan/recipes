@@ -24,7 +24,7 @@
                 <ng-template #noImage>
                     <img [src]="recipe.encodedImage" [alt]="'No Image Found'">
                 </ng-template>
-                {{recipe.description.length > 200 ? recipe.description.substring(0, 200) + '...' : recipe.description}}
+                {{recipe.description.length > 120 ? recipe.description.substring(0, 120) + '...' : recipe.description}}
             </mat-card-content>
             <mat-card-actions style="position: absolute; top: 130px;">
                 <button mat-button color="primary" (click)="openRecipeDetails(recipe)">View</button>

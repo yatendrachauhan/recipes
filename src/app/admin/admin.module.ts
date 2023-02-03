@@ -19,6 +19,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AddEditRecipeComponent } from './components/add-edit-recipe/add-edit-recipe.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
@@ -46,7 +47,8 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     MatChipsModule,
     MatSnackBarModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressSpinnerModule
   ]
 })
 export class AdminModule { }

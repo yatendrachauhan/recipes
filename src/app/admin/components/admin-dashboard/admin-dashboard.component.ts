@@ -18,6 +18,7 @@ export class AdminDashboardComponent implements OnInit, OnDestroy {
 
   displayedColumns: string[] = ['name', 'description', 'ingredients', 'instructions', 'imageUrl', 'actions'];
   dataSource: MatTableDataSource<Recipe>;
+  loading = false;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   private destroy$ = new Subject<void>();
 
@@ -41,13 +42,16 @@ export class AdminDashboardComponent implements OnInit, OnDestroy {
   }
 
   fetchRecipes() {
+    this.loading = true;
     this.recipeService.getRecipes().pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (response) => {
+          this.loading = false;
           this.dataSource = new MatTableDataSource<Recipe>(response);
           this.dataSource.paginator = this.paginator;
         },
         error: (err) => {
+          this.loading = false;
         }
       });
   }
